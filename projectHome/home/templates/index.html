@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if list_movies %}
+<ul class="list-group">
+    {% for movie in list_movies %}
+    <li class="list-group-items">
+        <a href="{% url 'movie' movie.id %}"> {{movie.title}}</a>
+
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+    <p>No movies available</p>
+{% endif %}
+{% endblock  %}
